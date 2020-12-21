@@ -1,0 +1,70 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
+    defaultConfig {
+        applicationId "com.tronku.odb2"
+        minSdkVersion 23
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    //https://mvnrepository.com/artifact/com.github.pires/obd-java-api
+    implementation group: 'com.github.pires', name: 'obd-java-api', version: '1.0'
+
+    //https://github.com/pkleczko/CustomGauge
+    implementation 'pl.pawelkleczkowski.customgauge:CustomGauge:1.0.3'
+
+    //https://github.com/Nightonke/BoomMenu
+    implementation 'com.nightonke:boommenu:1.0.9'
+
+    implementation 'com.github.f0ris.sweetalert:library:1.5.1'
+
+    // Google Maps API
+    implementation 'com.google.android.gms:play-services:9.8.0'
+
+    // https://github.com/Shinelw/ColorArcProgressBar
+    implementation 'com.github.shinelw:library:1.0.1'
+
+    //https://github.com/KeepSafe/TapTargetView
+    implementation 'com.getkeepsafe.taptargetview:taptargetview:1.5.3'
+
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+}
